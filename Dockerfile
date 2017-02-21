@@ -23,7 +23,7 @@ WORKDIR /home/admixture-simulation
 #WORKDIR rfmix
 #RUN autoreconf --force --install && ./configure && make
 WORKDIR /home/admixture-simulation
-RUN gunzip hapmap-phase2-genetic-map.tsv.gz
+#RUN gunzip hapmap-phase2-genetic-map.tsv.gz
 
 ENV PATH="/home/admixture-simulation/bin:${PATH}"
 ENTRYPOINT ["./do-admixture-simulation.py"]
