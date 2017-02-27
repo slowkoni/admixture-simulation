@@ -109,7 +109,7 @@ if args.genetic_map.endswith(('.gz','.bgz')):
 # that was built for this purpose, but assumes the entire input VCF/BCF
 # is founders of the admixing population, thus we need all the above to
 # get here
-print_and_run("rfmix/simulate -f %s.founders.bcf.gz -m %s.founders.map -g %s -o %s --growth-rate=1.5 --maximum-size=2000 --n-output=%d -c %d -G %d -p %f --random-seed=%d" % (args.output_basename, args.output_basename, args.genetic_map, args.output_basename, args.n_output, args.chromosome, args.n_generations, args.phase_switch, args.random_seed))
+print_and_run("rfmix/simulate -f %s.founders.bcf.gz -m %s.founders.map -g %s -o %s --growth-rate=1.5 --maximum-size=2000 --n-output=%d -c %d -G %d -p %f --random-seed=%d %s" % (args.output_basename, args.output_basename, args.genetic_map, args.output_basename, args.n_output, args.chromosome, args.n_generations, args.phase_switch, args.random_seed, "--dephase" if args.dephase else ""))
 
 # If we decompressed the map, get rid of the decompressed file to keep
 # shit clean
