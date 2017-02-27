@@ -2,11 +2,12 @@
 FROM ubuntu:14.04.5
 
 MAINTAINER Mark Koni Wright <mhwright@stanford.edu>
-LABEL version="0.01"
+LABEL version="0.02"
 
 # Update base distribution and install needed packages
 RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install -y git gcc g++ make autoconf automake pkg-config python python-all python-pip python-all-dev
+RUN apt-get install -y git pkg-config python python-all python-pip python-all-dev
+#gcc g++ make autoconf automake 
 #libgsl0-dev hdf5-tools hdf5-helpers python-setuptools libhdf5-serial-dev perl perl-modules awscli s3cmd openssh-server openssh-client gnupg time
 
 ARG UID=1000
