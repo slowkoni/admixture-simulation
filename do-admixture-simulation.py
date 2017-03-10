@@ -5,6 +5,7 @@ import os
 import argparse
 import random
 import re
+import string
 
 # wrapper to stop this script from trying to progress if any of the many
 # shell commands it executes fails or the user interrupts with ctrl-c
@@ -75,7 +76,9 @@ reference_map = open("%s.ref.map" % args.output_basename, "w")
 
 random.seed(args.random_seed)
 for line in f:
-    [id, subpop] = line.strip().split('\t')
+    l = string.split(line.strip(), sep='\t', maxsplit=2)
+    id = l[0]
+    subpop = l[1]
     if random.random() < p:
 #        founder_map[id] = subpop
         founder_map.write("%s\t%s\n" % (id, subpop))
