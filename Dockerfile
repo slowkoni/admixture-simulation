@@ -1,8 +1,8 @@
 # Start from a recent release of the 14.04 ubuntu distribution
 FROM ubuntu:14.04.5
 
-MAINTAINER Mark Koni Wright <slowkoni@gmail.com>
-LABEL version="0.03"
+MAINTAINER Mark Koni Wright <markoni.wright@gmail.com>
+LABEL version="0.04"
 
 # Update base distribution and install needed packages
 ENV DEBIAN_FRONTEND=noninteractive

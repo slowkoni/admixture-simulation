@@ -19,7 +19,7 @@ First, you need an input VCF (or BCF) file and a sample map file. You can use re
 The sample map file is a two column tab delimited text file giving VCF sample ids (those that appear on the #CHROM header line) in the first column and the label/name of the corresponding subpopulation in the second column. Any following columns are ignored. Suppose your VCF and sample map file are named my-input.vcf.gz and my-input.map, and located at the absolute path directory /path/to/input/files/ on the docker host.
 
 ```
-docker run -t -i -v /path/to/input/files:/home/admixture-simulation/shared admixture-simulation --input-vcf shared/my-input.vcf.gz --sample-map shared/my-input.map --output-basename test-admix --chromosome 20 --n-generations 8 --n-output 100
+docker run -t -i -v /path/to/input/files:/home/admixture-simulation/shared admixture-simulation --input-vcf shared/my-input.vcf.gz --sample-map shared/my-input.map --output-basename test-admix --chromosome 20 --n-generations 7 --n-output 100
 ```
 
 If the input data is simulated and only contains one chromosome, make sure you select the right chromosome with the --chromosome option. Otherwise, for whole genome VCF inputs, this container only simulates one chromosome, so you must select which one with the --chromosome option. This option defaults to chromosome 20. To see all available command options, use ```docker run -t -i admixture-simulation -h```
